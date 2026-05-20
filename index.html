@@ -586,6 +586,114 @@
   /* utility */
   .leaf-divider{height:80px;display:flex;align-items:center;justify-content:center}
   .leaf-divider svg{height:32px;opacity:.5}
+
+  /* KAKAO CHAT WIDGET */
+  .chat-fab{
+    position:fixed;right:24px;bottom:24px;width:64px;height:64px;border-radius:50%;
+    background:#FEE500;color:#3C1E1E;border:none;cursor:pointer;z-index:200;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 36px -8px rgba(35,36,29,.35), 0 6px 14px -4px rgba(35,36,29,.18);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .chat-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 20px 44px -10px rgba(35,36,29,.42)}
+  .chat-fab .badge{
+    position:absolute;top:-3px;right:-3px;background:#e23a3a;color:#fff;border-radius:999px;
+    min-width:20px;height:20px;padding:0 6px;display:flex;align-items:center;justify-content:center;
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:700;border:2px solid #fbfaf4;
+  }
+  .chat-fab svg{width:32px;height:32px}
+  body.chat-open .chat-fab svg.icon-chat{display:none}
+  body:not(.chat-open) .chat-fab svg.icon-close{display:none}
+  body.chat-open .chat-fab .badge{display:none}
+
+  .chat-panel{
+    position:fixed;right:24px;bottom:104px;width:360px;max-width:calc(100vw - 32px);
+    max-height:560px;background:#abc1d6;border-radius:18px;overflow:hidden;z-index:199;
+    box-shadow:0 30px 60px -14px rgba(35,36,29,.4), 0 10px 24px -6px rgba(35,36,29,.18);
+    display:flex;flex-direction:column;
+    transform:translateY(16px) scale(.96);opacity:0;visibility:hidden;
+    transform-origin:bottom right;transition:transform .25s ease, opacity .2s, visibility .2s;
+  }
+  body.chat-open .chat-panel{transform:translateY(0) scale(1);opacity:1;visibility:visible}
+
+  .chat-head{
+    background:#abc1d6;color:#2b3a4d;padding:14px 18px;display:flex;align-items:center;gap:12px;
+    border-bottom:1px solid rgba(255,255,255,.4);
+  }
+  .chat-head .avatar{
+    width:36px;height:36px;border-radius:50%;background:#7a8a3a;color:#f4d8c8;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif KR',serif;font-weight:700;font-size:14px;letter-spacing:-.02em;
+    border-radius:46% 54% 48% 52% / 50% 46% 54% 50%;flex-shrink:0;
+  }
+  .chat-head .info{flex:1;min-width:0}
+  .chat-head .info .name{font-family:'Noto Serif KR';font-weight:700;font-size:14px;letter-spacing:-.02em;display:flex;align-items:center;gap:6px}
+  .chat-head .info .name::after{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0}
+  .chat-head .info .sub{font-size:11px;color:#5d6e80;margin-top:2px;letter-spacing:.02em}
+  .chat-head .close-btn{background:transparent;border:none;cursor:pointer;color:#2b3a4d;padding:6px;border-radius:8px;display:flex;align-items:center}
+  .chat-head .close-btn:hover{background:rgba(255,255,255,.5)}
+
+  .chat-body{
+    flex:1;overflow-y:auto;padding:18px 16px;background:#abc1d6;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><g fill='none' stroke='%239fb5c9' stroke-width='.6' opacity='.45'><circle cx='15' cy='15' r='2'/><circle cx='55' cy='35' r='2'/><circle cx='25' cy='55' r='2'/><circle cx='65' cy='65' r='2'/></g></svg>");
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .chat-time{
+    text-align:center;font-size:10.5px;color:#5d6e80;background:rgba(255,255,255,.45);
+    padding:4px 12px;border-radius:999px;margin:6px auto 4px;letter-spacing:.04em;font-family:'Inter',sans-serif;
+  }
+  .msg{display:flex;gap:8px;align-items:flex-end;max-width:88%}
+  .msg.them .av{width:30px;height:30px;border-radius:50%;background:#7a8a3a;color:#f4d8c8;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR';font-weight:700;font-size:12px;
+    border-radius:46% 54% 48% 52% / 50% 46% 54% 50%;
+  }
+  .msg.them{align-self:flex-start}
+  .msg.them .bubble{
+    background:#fff;color:#1f2937;padding:10px 14px;border-radius:4px 16px 16px 16px;
+    font-size:13.5px;line-height:1.55;letter-spacing:-.01em;
+    font-family:'Pretendard','Noto Serif KR',sans-serif;
+    box-shadow:0 1px 1px rgba(0,0,0,.04);
+  }
+  .msg.them .bubble b{font-weight:600;color:var(--olive-deep)}
+  .msg.me{align-self:flex-end}
+  .msg.me .bubble{
+    background:#FEE500;color:#1f2937;padding:10px 14px;border-radius:16px 4px 16px 16px;
+    font-size:13.5px;line-height:1.55;letter-spacing:-.01em;font-family:'Pretendard',sans-serif;
+  }
+  .msg .meta{font-size:10px;color:#5d6e80;align-self:flex-end;margin-bottom:2px;letter-spacing:.02em}
+
+  .quick-replies{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;padding-left:38px}
+  .quick-replies button{
+    background:#fff;border:1px solid rgba(0,0,0,.06);padding:7px 12px;border-radius:999px;cursor:pointer;
+    font-family:'Pretendard',sans-serif;font-size:12px;color:#374151;transition:all .15s;
+  }
+  .quick-replies button:hover{background:#FEE500;border-color:#FEE500}
+
+  .chat-foot{
+    background:#fff;padding:12px 14px;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(0,0,0,.05);
+  }
+  .chat-foot .row{display:flex;gap:8px;align-items:center;background:#f3f4f6;border-radius:999px;padding:6px 6px 6px 14px}
+  .chat-foot .row input{
+    flex:1;border:none;background:transparent;outline:none;font-family:'Pretendard',sans-serif;font-size:13px;color:#1f2937;
+  }
+  .chat-foot .row input::placeholder{color:#9aa0a6}
+  .chat-foot .row .send{
+    width:34px;height:34px;border-radius:50%;border:none;background:#FEE500;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;color:#3C1E1E;
+  }
+  .chat-foot .links{display:flex;gap:6px;justify-content:space-between;align-items:center;padding:0 2px}
+  .chat-foot .links .small{font-size:10.5px;color:#9aa0a6;letter-spacing:.02em}
+  .chat-foot .links a{
+    background:#FEE500;color:#3C1E1E;font-family:'Pretendard',sans-serif;font-size:11.5px;font-weight:700;
+    padding:8px 14px;border-radius:999px;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:6px;
+  }
+  .chat-foot .links a:hover{background:#ffd900}
+
+  @media(max-width:480px){
+    .chat-fab{right:18px;bottom:18px;width:58px;height:58px}
+    .chat-fab svg{width:28px;height:28px}
+    .chat-panel{right:12px;left:12px;bottom:88px;width:auto;max-width:none;max-height:72vh}
+  }
 </style>
 </head>
 <body>
@@ -1258,6 +1366,77 @@
   </div>
 </footer>
 
+<!-- KAKAO CHAT WIDGET -->
+<button class="chat-fab" aria-label="카카오톡 채널 열기" aria-expanded="false">
+  <svg class="icon-chat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 3C6.48 3 2 6.58 2 11.05c0 2.79 1.79 5.24 4.5 6.7l-.95 3.49c-.09.34.27.61.57.43l4.15-2.74c.57.07 1.15.12 1.73.12 5.52 0 10-3.58 10-8.04C22 6.58 17.52 3 12 3z"/>
+  </svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+    <path d="M6 6l12 12M18 6L6 18"/>
+  </svg>
+  <span class="badge" id="chat-badge">1</span>
+</button>
+
+<aside class="chat-panel" role="dialog" aria-labelledby="chat-title" aria-modal="false">
+  <header class="chat-head">
+    <div class="avatar">맘곁</div>
+    <div class="info">
+      <div class="name" id="chat-title">맘곁 · 바비즈코리아</div>
+      <div class="sub">평일 10:00–17:00 응답 · By mothersbaby</div>
+    </div>
+    <button class="close-btn" aria-label="닫기">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </header>
+
+  <div class="chat-body" id="chat-body">
+    <div class="chat-time">오늘 · 평일 10:00–17:00 응답</div>
+
+    <div class="msg them">
+      <div class="av">맘곁</div>
+      <div>
+        <div class="bubble">
+          안녕하세요, <b>맘곁</b>입니다 🌿<br>
+          임신·출산·육아 어떤 부분이 궁금하세요? 함께 살펴볼게요.
+        </div>
+      </div>
+      <div class="meta">방금</div>
+    </div>
+
+    <div class="msg them">
+      <div class="av" style="visibility:hidden"></div>
+      <div>
+        <div class="bubble">
+          맘곁 도입 문의 · 마더스베이비 제휴 · 공공기관 모유수유실 · 글로벌 파트너십 — 무엇이든 말씀해 주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-replies">
+      <button data-q="맘곁 도입 문의">맘곁 도입 문의</button>
+      <button data-q="마더스베이비 제휴">마더스베이비 제휴</button>
+      <button data-q="모유수유실 설치">모유수유실 설치</button>
+      <button data-q="해외 파트너십">해외 파트너십</button>
+    </div>
+  </div>
+
+  <div class="chat-foot">
+    <div class="row">
+      <input id="chat-input" type="text" placeholder="메시지를 입력하세요…" aria-label="메시지 입력">
+      <button class="send" id="chat-send" aria-label="보내기">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg>
+      </button>
+    </div>
+    <div class="links">
+      <span class="small">T. 1544-7554</span>
+      <a href="http://pf.kakao.com/_xfvxfxb" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.58 2 11.05c0 2.79 1.79 5.24 4.5 6.7l-.95 3.49c-.09.34.27.61.57.43l4.15-2.74c.57.07 1.15.12 1.73.12 5.52 0 10-3.58 10-8.04C22 6.58 17.52 3 12 3z"/></svg>
+        카카오톡 채널 시작하기
+      </a>
+    </div>
+  </div>
+</aside>
+
 <script>
 (function(){
   // Mobile menu toggle
@@ -1318,6 +1497,76 @@
     }, {passive:true});
   }
   if (slides.length > 1) start();
+
+  // KAKAO CHAT WIDGET
+  const fab = document.querySelector('.chat-fab');
+  const panel = document.querySelector('.chat-panel');
+  const closeBtn = document.querySelector('.chat-head .close-btn');
+  const chatBody = document.getElementById('chat-body');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const chatBadge = document.getElementById('chat-badge');
+
+  function toggleChat(open) {
+    const isOpen = open === undefined ? !body.classList.contains('chat-open') : open;
+    body.classList.toggle('chat-open', isOpen);
+    fab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) {
+      chatBadge.style.display = 'none';
+      setTimeout(() => chatBody.scrollTop = chatBody.scrollHeight, 100);
+    }
+  }
+  if (fab) fab.addEventListener('click', () => toggleChat());
+  if (closeBtn) closeBtn.addEventListener('click', () => toggleChat(false));
+
+  function appendMessage(side, text) {
+    const wrap = document.createElement('div');
+    wrap.className = 'msg ' + side;
+    if (side === 'me') {
+      wrap.innerHTML = '<div><div class="bubble"></div></div><div class="meta">방금</div>';
+      wrap.querySelector('.bubble').textContent = text;
+    } else {
+      wrap.innerHTML = '<div class="av">맘곁</div><div><div class="bubble"></div></div>';
+      wrap.querySelector('.bubble').innerHTML = text;
+    }
+    chatBody.appendChild(wrap);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function botReply(userText) {
+    setTimeout(() => {
+      const reply = '문의 감사합니다. 평일 10:00–17:00 안에 답변 드리겠습니다.<br>빠른 상담은 아래 <b>카카오톡 채널</b>이나 전화 <b>1544-7554</b>로 연락 주세요. 🌿';
+      appendMessage('them', reply);
+    }, 600);
+  }
+
+  function send(text) {
+    const t = (text || chatInput.value || '').trim();
+    if (!t) return;
+    appendMessage('me', t);
+    chatInput.value = '';
+    botReply(t);
+  }
+  if (chatSend) chatSend.addEventListener('click', () => send());
+  if (chatInput) {
+    chatInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); send(); }
+    });
+  }
+  document.querySelectorAll('.quick-replies button').forEach(b => {
+    b.addEventListener('click', () => send(b.dataset.q || b.textContent));
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (body.classList.contains('chat-open')) toggleChat(false);
+      if (body.classList.contains('menu-open')) {
+        body.classList.remove('menu-open');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
 })();
 </script>
 </body>
