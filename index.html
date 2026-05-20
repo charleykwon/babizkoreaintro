@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>바비즈코리아 — Birth of Happyfamily, babiz</title>
+<meta name="description" content="임신·출산·모유수유·신생아케어부터 디지털 태교·육아케어까지. 엄마와 가족의 곁에서 함께 성장하는 모자보건·육아 전문 기업, 주식회사 바비즈코리아. 대표 브랜드 맘곁(MomGyeot)·마더스베이비.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700&family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#5d6e2c;
+    --olive-deep:#3f4d1c;
+    --olive-soft:#8a9b56;
+    --olive-pale:#d6dcb8;
+    --cream:#f5f2e9;
+    --cream-deep:#ece6d5;
+    --paper:#fbfaf4;
+    --ink:#23241d;
+    --ink-mute:#666551;
+    --line:#d8d3c1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:'Pretendard','Noto Serif KR',-apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+    color:var(--ink);background:var(--paper);font-weight:400;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .serif{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-weight:500;letter-spacing:-.01em}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-weight:500;letter-spacing:.34em;
+    text-transform:uppercase;font-size:11px;color:var(--olive);
+  }
+  .container{max-width:1240px;margin:0 auto;padding:0 32px}
+
+  /* NAV */
+  nav.top{
+    position:sticky;top:0;z-index:50;background:rgba(251,250,244,.92);
+    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(216,211,193,.6);
+  }
+  nav.top .inner{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px}
+  .logo{display:flex;align-items:baseline;gap:10px;flex-shrink:0}
+  .logo .mark{
+    background:var(--olive);color:#fff;font-family:'Inter',sans-serif;font-weight:700;
+    padding:6px 12px;letter-spacing:.02em;font-size:18px;
+  }
+  .logo .mark sup{font-size:9px;letter-spacing:.3em;color:var(--olive-pale);margin-left:4px;font-weight:600}
+  .logo .ko{font-family:'Noto Serif KR';font-weight:600;color:var(--ink);font-size:14px;letter-spacing:.1em}
+  nav.top ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+  nav.top a{font-size:13px;letter-spacing:.04em;color:var(--ink-mute);transition:color .2s}
+  nav.top a:hover{color:var(--olive-deep)}
+  nav.top .cta{
+    border:1px solid var(--olive);color:var(--olive);padding:9px 18px;font-size:12px;
+    letter-spacing:.18em;font-weight:500;transition:all .2s;flex-shrink:0;
+  }
+  nav.top .cta:hover{background:var(--olive);color:#fff}
+  /* Hamburger */
+  .menu-btn{display:none;width:42px;height:42px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0;position:relative}
+  .menu-btn span{position:absolute;left:9px;right:9px;height:1.5px;background:var(--ink);transition:transform .25s, opacity .25s, top .25s;border-radius:1px}
+  .menu-btn span:nth-child(1){top:14px}
+  .menu-btn span:nth-child(2){top:20px}
+  .menu-btn span:nth-child(3){top:26px}
+  body.menu-open .menu-btn span:nth-child(1){top:20px;transform:rotate(45deg)}
+  body.menu-open .menu-btn span:nth-child(2){opacity:0}
+  body.menu-open .menu-btn span:nth-child(3){top:20px;transform:rotate(-45deg)}
+  @media(max-width:980px){
+    nav.top ul{
+      position:fixed;top:70px;left:0;right:0;background:var(--paper);flex-direction:column;
+      align-items:flex-start;gap:0;padding:20px 32px 36px;border-bottom:1px solid var(--line);
+      transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .25s, opacity .25s;
+      max-height:calc(100vh - 70px);overflow:auto;z-index:49;
+    }
+    nav.top ul li{width:100%;border-bottom:1px solid rgba(216,211,193,.5)}
+    nav.top ul a{display:block;padding:18px 0;font-size:16px;font-family:'Noto Serif KR';font-weight:500;color:var(--ink)}
+    body.menu-open nav.top ul{transform:translateY(0);opacity:1;pointer-events:auto}
+    .menu-btn{display:block}
+    nav.top .cta{display:none}
+  }
+  @media(max-width:480px){
+    nav.top .inner{height:62px}
+    .logo .ko{display:none}
+    nav.top ul{top:62px}
+  }
+
+  /* HERO + ROLLING BANNER */
+  .hero{position:relative;overflow:hidden;background:var(--cream)}
+  .slides{position:relative;width:100%;min-height:88vh;display:grid;grid-template-rows:1fr}
+  .slide{
+    grid-column:1;grid-row:1;
+    display:grid;grid-template-columns:1.05fr 1fr;min-height:88vh;
+    opacity:0;visibility:hidden;transition:opacity .8s ease;
+  }
+  .slide.active{opacity:1;visibility:visible}
+  .slide-l, .slide-r{padding:80px 60px 60px;position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:88vh}
+
+  /* SLIDE 1 — Birth of Happyfamily */
+  .slide-1 .slide-l{background:linear-gradient(180deg,#4f5d24 0%,#3f4d1c 100%);color:#fff}
+  .slide-1 .slide-l::before{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'><g fill='none' stroke='%23a8b884' stroke-width='1.2' opacity='.18'><path d='M120 60 C 60 180,60 360,140 480 C 180 540,220 600,180 700'/><path d='M60 220 C 140 240,260 220,300 320 C 330 400,300 500,260 580'/><path d='M260 100 C 320 200,360 320,330 460 C 310 560,260 660,300 760'/><path d='M380 30 C 460 160,500 320,460 460 C 430 580,380 700,420 800'/><ellipse cx='200' cy='350' rx='90' ry='30' transform='rotate(-32 200 350)'/><ellipse cx='340' cy='240' rx='100' ry='28' transform='rotate(40 340 240)'/><ellipse cx='160' cy='580' rx='80' ry='26' transform='rotate(-18 160 580)'/><ellipse cx='420' cy='520' rx='110' ry='30' transform='rotate(22 420 520)'/></g></svg>");
+    background-size:cover;background-position:center;
+  }
+  .slide-1 .top-row{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+  .slide-1 .eyebrow{color:#cbd6a3;letter-spacing:.32em}
+  .slide-1 .since{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.3em;color:#cbd6a3;opacity:.8;white-space:nowrap}
+  .slide-1 h1{
+    position:relative;z-index:2;margin:80px 0 0;
+    font-family:'Cormorant Garamond',serif;font-weight:400;
+    font-size:clamp(40px,7vw,96px);line-height:1;letter-spacing:-.02em;color:#fbfaf4;
+  }
+  .slide-1 h1 em{font-style:italic;color:#dde4be;display:block}
+  .slide-1 h1 .brand{font-weight:600;letter-spacing:-.04em}
+  .slide-1 .underline{height:1px;background:#a8b884;width:340px;max-width:60%;margin-top:18px;opacity:.6}
+  .slide-1 .meta{position:relative;z-index:2;font-size:13px;letter-spacing:.06em}
+  .slide-1 .meta .label{color:#cbd6a3;font-family:'Inter',sans-serif;letter-spacing:.24em;font-size:11px;display:block;margin-bottom:6px}
+  .slide-1 .meta strong{font-family:'Noto Serif KR';font-weight:500;font-size:15px;color:#fff;letter-spacing:.04em}
+
+  .slide-1 .slide-r{background:var(--cream);justify-content:center}
+  .slide-1 .slide-r::after{
+    content:"";position:absolute;right:-80px;bottom:-80px;width:380px;height:380px;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,184,132,.18) 0%,transparent 70%);pointer-events:none;
+  }
+  .slide-1 .slide-r .eyebrow{margin-bottom:24px}
+  .slide-1 .brand-name{
+    font-family:'Noto Serif KR';font-weight:700;font-size:clamp(40px,6vw,80px);line-height:1.05;
+    margin:0 0 8px;letter-spacing:-.04em;color:var(--ink);
+  }
+  .slide-1 .ruled{border-top:1px solid var(--line);margin:34px 0 28px;width:88%}
+  .slide-1 .pitch{font-size:clamp(14px,1.4vw,16px);color:var(--ink-mute);line-height:1.85;max-width:520px;font-family:'Noto Serif KR';font-weight:400}
+  .slide-1 .pitch b{color:var(--olive-deep);font-weight:600}
+  .hero-info{margin-top:48px;display:grid;grid-template-columns:repeat(3,auto);gap:24px 34px;align-items:start}
+  .hero-info .item .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;color:var(--olive);font-weight:600;margin-bottom:8px}
+  .hero-info .item .val{font-family:'Noto Serif KR';font-weight:600;font-size:15px;color:var(--ink)}
+  .hero-info .item .val small{font-weight:400;color:var(--ink-mute);font-size:12px;margin-left:6px}
+  .hero-info .pill{background:var(--olive);color:#fff;padding:4px 10px;font-size:12px;letter-spacing:.04em;font-weight:500;font-family:'Pretendard'}
+  .hero-info .pill.alt{background:#fff;color:var(--olive);border:1px solid var(--olive)}
+
+  /* SLIDE 2 — Mothersbaby cushion */
+  .slide-2 .slide-l{background:#fbfaf4;justify-content:center;color:var(--ink)}
+  .slide-2 .badge{position:relative;z-index:2;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.32em;color:var(--olive);font-weight:600}
+  .slide-2 .badge::before{content:"";display:inline-block;width:32px;height:1px;background:var(--olive);vertical-align:middle;margin-right:12px}
+  .slide-2 h1{
+    margin:20px 0 0;font-family:'Noto Serif KR';font-weight:700;
+    font-size:clamp(34px,5vw,60px);line-height:1.2;letter-spacing:-.03em;color:var(--ink);
+  }
+  .slide-2 h1 em{font-style:normal;color:var(--olive);font-weight:700}
+  .slide-2 .sub{margin-top:22px;font-size:clamp(14px,1.3vw,16px);color:var(--ink-mute);line-height:1.85;max-width:540px;font-family:'Noto Serif KR'}
+  .slide-2 .sub b{color:var(--olive-deep);font-weight:600}
+  .slide-2 .award{display:inline-flex;align-items:center;gap:12px;margin-top:30px;background:var(--cream);padding:12px 18px;border:1px solid var(--olive-pale);font-size:12.5px;color:var(--olive-deep);font-family:'Pretendard';font-weight:500}
+  .slide-2 .award b{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--olive)}
+  .slide-2 .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .slide-2 .cta-btn{padding:14px 26px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;font-weight:600;border:1px solid var(--olive);color:#fff;background:var(--olive);transition:all .2s}
+  .slide-2 .cta-btn.ghost{background:transparent;color:var(--olive)}
+  .slide-2 .cta-btn:hover{background:var(--olive-deep);border-color:var(--olive-deep);color:#fff}
+  .slide-2 .slide-r{padding:0;background:#ece7d8;overflow:hidden;min-height:88vh}
+  .slide-2 .slide-r .photo{
+    width:100%;height:100%;min-height:88vh;background:url('images/hero-cushion.jpg') center 30%/cover no-repeat;
+  }
+
+  /* SLIDE 3 — MomGyeot app */
+  .slide-3 .slide-l{background:#fbfaf4;justify-content:center;color:var(--ink)}
+  .slide-3 .badge{position:relative;z-index:2;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.32em;color:var(--olive);font-weight:600}
+  .slide-3 .badge::before{content:"";display:inline-block;width:32px;height:1px;background:var(--olive);vertical-align:middle;margin-right:12px}
+  .slide-3 h1{margin:20px 0 0;font-family:'Noto Serif KR';font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.2;letter-spacing:-.03em;color:var(--ink)}
+  .slide-3 h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:var(--olive)}
+  .slide-3 .sub{margin-top:22px;font-size:clamp(14px,1.3vw,16px);color:var(--ink-mute);line-height:1.85;max-width:540px;font-family:'Noto Serif KR'}
+  .slide-3 .sub b{color:var(--olive-deep);font-weight:600}
+  .slide-3 .stagepills{margin-top:28px;display:flex;gap:8px;flex-wrap:wrap}
+  .slide-3 .stagepills span{padding:6px 14px;background:var(--cream);border:1px solid var(--olive-pale);font-size:12px;color:var(--olive-deep);letter-spacing:.06em}
+  .slide-3 .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+  .slide-3 .cta-btn{padding:14px 26px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;font-weight:600;border:1px solid var(--olive);color:#fff;background:var(--olive);transition:all .2s}
+  .slide-3 .cta-btn.ghost{background:transparent;color:var(--olive)}
+  .slide-3 .cta-btn:hover{background:var(--olive-deep);border-color:var(--olive-deep);color:#fff}
+
+  .slide-3 .slide-r{background:linear-gradient(180deg,#5d6e2c 0%,#3f4d1c 100%);position:relative;display:flex;align-items:center;justify-content:center;padding:60px 30px;overflow:hidden}
+  .slide-3 .slide-r::before{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 800'><g fill='none' stroke='%23a8b884' stroke-width='1.2' opacity='.18'><ellipse cx='200' cy='350' rx='90' ry='30' transform='rotate(-32 200 350)'/><ellipse cx='340' cy='240' rx='100' ry='28' transform='rotate(40 340 240)'/><ellipse cx='160' cy='580' rx='80' ry='26' transform='rotate(-18 160 580)'/><ellipse cx='420' cy='520' rx='110' ry='30' transform='rotate(22 420 520)'/></g></svg>");background-size:cover
+  }
+  .slide-3 .phones-mini{position:relative;z-index:2;display:flex;gap:20px;align-items:flex-end}
+  .slide-3 .phones-mini .pmini{
+    width:200px;background:#0f1009;border-radius:26px;padding:6px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  }
+  .slide-3 .phones-mini .pmini .scr{aspect-ratio:9/19.5;border-radius:20px;overflow:hidden;background:#fff}
+  .slide-3 .phones-mini .pmini .scr img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .slide-3 .phones-mini .pmini.mid{transform:translateY(-20px) scale(1.04);z-index:2}
+
+  /* SLIDE CONTROLS */
+  .slide-nav{position:absolute;left:0;right:0;bottom:32px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:10;pointer-events:none}
+  .slide-dots{display:flex;gap:10px;pointer-events:auto}
+  .slide-dots button{
+    width:28px;height:2px;background:rgba(35,36,29,.2);border:none;cursor:pointer;padding:0;transition:background .25s, width .25s;
+  }
+  .slide-dots button.active{background:var(--olive);width:48px}
+  .slide-arrows{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;padding:0 24px;pointer-events:none;z-index:9}
+  .slide-arrows button{
+    pointer-events:auto;width:48px;height:48px;border-radius:50%;background:rgba(251,250,244,.85);border:1px solid rgba(216,211,193,.6);
+    color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);transition:all .2s;
+  }
+  .slide-arrows button:hover{background:#fff;border-color:var(--olive)}
+  .slide-counter{position:absolute;top:24px;right:24px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--ink-mute);z-index:10}
+  .slide-counter b{color:var(--olive);font-weight:600}
+
+  @media(max-width:980px){
+    .slides, .slide{min-height:auto}
+    .slide{grid-template-columns:1fr;grid-template-rows:auto auto}
+    .slide-l, .slide-r{padding:60px 28px 48px;min-height:auto}
+    .slide-1 h1{margin-top:48px}
+    .slide-1 .meta{margin-top:36px}
+    .slide-2 .slide-r{min-height:380px;order:-1}
+    .slide-2 .slide-r .photo{min-height:380px}
+    .slide-3 .slide-r{min-height:480px;padding:48px 24px;order:-1}
+    .slide-3 .phones-mini .pmini{width:140px}
+    .hero-info{grid-template-columns:1fr 1fr;gap:20px}
+    .slide-arrows{display:none}
+    .slide-counter{top:auto;bottom:24px;right:24px}
+    .slide-nav{justify-content:flex-start;padding-left:28px;bottom:24px}
+  }
+  @media(max-width:480px){
+    .slide-l, .slide-r{padding:48px 22px 40px}
+    .slide-1 .top-row{flex-direction:column;gap:10px}
+    .slide-1 h1{margin-top:36px}
+    .slide-2 .award{font-size:11px;padding:10px 14px}
+    .slide-3 .phones-mini{gap:10px}
+    .slide-3 .phones-mini .pmini{width:120px}
+    .slide-3 .phones-mini .pmini.mid{transform:translateY(-14px) scale(1.04)}
+    .hero-info{grid-template-columns:1fr;gap:18px}
+  }
+
+  /* SECTION SCAFFOLD */
+  section{padding:120px 0;position:relative}
+  section.tight{padding:90px 0}
+  .container{padding-left:clamp(20px,4vw,32px);padding-right:clamp(20px,4vw,32px)}
+  .section-head{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-bottom:64px;align-items:end}
+  .section-head .num{font-family:'Cormorant Garamond',serif;font-size:88px;line-height:.9;color:var(--olive);font-weight:400;letter-spacing:-.04em}
+  .section-head h2{
+    font-family:'Noto Serif KR';font-weight:700;font-size:clamp(24px,3.4vw,44px);
+    line-height:1.25;letter-spacing:-.03em;margin:0;color:var(--ink);
+  }
+  .section-head .lead{margin-top:14px;font-size:clamp(14px,1.4vw,15px);color:var(--ink-mute);line-height:1.85;max-width:720px}
+  @media(max-width:880px){
+    section{padding:80px 0}
+    .section-head{grid-template-columns:1fr;gap:14px;margin-bottom:40px}
+    .section-head .num{font-size:48px}
+  }
+  @media(max-width:480px){
+    section{padding:64px 0}
+    .section-head .num{font-size:40px}
+  }
+
+  /* ABOUT */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+  .about .stat-block{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .about .stat-block .cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 28px}
+  .about .stat-block .num{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:54px;color:var(--olive-deep);line-height:1;letter-spacing:-.02em}
+  .about .stat-block .num sup{font-size:18px;font-weight:500;color:var(--olive);margin-left:4px;vertical-align:top}
+  .about .stat-block .lbl{margin-top:10px;font-size:13px;color:var(--ink-mute);letter-spacing:.02em}
+  .about .info-table{margin-top:0;border-top:1px solid var(--line)}
+  .about .info-table .row{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line);padding:18px 4px}
+  .about .info-table .k{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--olive);font-weight:600;text-transform:uppercase;padding-top:2px}
+  .about .info-table .v{font-size:14.5px;color:var(--ink);font-family:'Noto Serif KR';font-weight:500;letter-spacing:.01em}
+  .about .info-table .v small{display:block;font-weight:400;color:var(--ink-mute);font-size:13px;margin-top:4px}
+  @media(max-width:880px){
+    .about-grid{grid-template-columns:1fr;gap:36px}
+    .about .stat-block .cell{padding:22px 20px}
+    .about .stat-block .num{font-size:42px}
+    .about .info-table .row{grid-template-columns:110px 1fr;padding:14px 4px}
+  }
+  @media(max-width:480px){
+    .about .stat-block{grid-template-columns:1fr 1fr}
+    .about .stat-block .cell{padding:18px 16px}
+    .about .stat-block .num{font-size:34px}
+    .about .info-table .row{grid-template-columns:88px 1fr}
+    .about .info-table .k{font-size:10px;letter-spacing:.2em}
+    .about .info-table .v{font-size:13.5px}
+  }
+
+  /* MOMGYEOT FEATURE */
+  .mom-feature{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%);position:relative;overflow:hidden}
+  .mom-feature::before{
+    content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'><g fill='none' stroke='%235d6e2c' stroke-width='1' opacity='.14'><ellipse cx='300' cy='300' rx='180' ry='50' transform='rotate(-22 300 300)'/><ellipse cx='300' cy='300' rx='220' ry='40' transform='rotate(42 300 300)'/><ellipse cx='300' cy='300' rx='150' ry='60' transform='rotate(80 300 300)'/><circle cx='300' cy='300' r='10'/></g></svg>");
+    background-size:contain;
+  }
+  .mom-banner{
+    background:var(--olive);color:#fff;padding:60px 64px;margin-bottom:64px;position:relative;overflow:hidden;
+  }
+  .mom-banner::after{
+    content:"";position:absolute;right:0;top:0;bottom:0;width:55%;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><g fill='none' stroke='%23a8b884' stroke-width='1.4' opacity='.32'><path d='M40 120 Q 100 40 200 80 T 380 60'/><path d='M40 150 Q 120 80 220 110 T 380 100'/><circle cx='80' cy='40' r='3'/><circle cx='320' cy='30' r='3'/><circle cx='240' cy='160' r='3'/></g></svg>");
+    background-size:cover;background-position:right center;
+  }
+  .mom-banner .eyebrow{color:#cbd6a3}
+  .mom-banner h3{
+    font-family:'Noto Serif KR';font-weight:700;font-size:clamp(28px,3.6vw,46px);
+    line-height:1.3;margin:14px 0 0;letter-spacing:-.03em;position:relative;z-index:2;
+  }
+  .mom-banner h3 .em{color:#dde4be;font-style:normal}
+  .mom-banner .sub{margin-top:16px;font-size:15px;color:#dde4be;line-height:1.85;max-width:640px;position:relative;z-index:2;font-weight:400}
+
+  .mom-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative;z-index:2}
+  .mom-card{
+    background:#fff;padding:48px 44px;border:1px solid var(--line);transition:transform .3s, box-shadow .3s;
+    position:relative;display:flex;flex-direction:column;
+  }
+  .mom-card:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(63,77,28,.2)}
+  .mom-card .stage{
+    font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--olive);font-weight:600;text-transform:uppercase;
+  }
+  .mom-card h4{
+    font-family:'Noto Serif KR';font-weight:700;font-size:30px;margin:14px 0 6px;letter-spacing:-.03em;color:var(--ink);
+  }
+  .mom-card .tag{font-size:13px;color:var(--olive-deep);letter-spacing:.02em;margin-bottom:24px;font-weight:500}
+  .mom-card .feats{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+  .mom-card .feats li{padding:16px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.65}
+  .mom-card .feats li b{display:block;font-weight:600;color:var(--ink);margin-bottom:3px}
+  .mom-card .feats li span{color:var(--ink-mute);font-size:13px}
+  .mom-card .footer-cta{margin-top:32px;display:flex;align-items:center;justify-content:space-between}
+  .mom-card .footer-cta a{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.28em;color:var(--olive);font-weight:600}
+  .mom-card .footer-cta .icon{width:36px;height:36px;border:1px solid var(--olive);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--olive);transition:all .2s}
+  .mom-card:hover .footer-cta .icon{background:var(--olive);color:#fff}
+  @media(max-width:880px){
+    .mom-cards{grid-template-columns:1fr;gap:20px}
+    .mom-banner{padding:44px 28px;margin-bottom:36px}
+    .mom-banner::after{width:35%;opacity:.5}
+    .mom-card{padding:36px 28px}
+    .mom-card h4{font-size:26px}
+  }
+  @media(max-width:480px){
+    .mom-banner{padding:36px 22px}
+    .mom-banner h3{font-size:24px}
+    .mom-card{padding:30px 22px}
+  }
+
+  /* APP SHOWCASE */
+  .app-showcase{background:#fff;padding:120px 0;position:relative;overflow:hidden}
+  .app-showcase::before{
+    content:"";position:absolute;left:-150px;bottom:-150px;width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,184,132,.14) 0%,transparent 70%);pointer-events:none;
+  }
+  .phones{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:32px;margin-top:24px;flex-wrap:wrap}
+  .phone{
+    width:260px;flex:0 0 260px;background:#23241d;border-radius:38px;padding:10px;
+    box-shadow:0 30px 60px -20px rgba(35,36,29,.28),0 12px 24px -8px rgba(35,36,29,.16);
+    position:relative;transition:transform .35s ease;
+  }
+  .phone::before{
+    content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    width:88px;height:22px;background:#0f1009;border-radius:14px;z-index:2;
+  }
+  .phone .screen{
+    width:100%;aspect-ratio:9/19.5;border-radius:30px;overflow:hidden;background:var(--cream);
+  }
+  .phone .screen img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .momgyeot-splash{
+    width:100%;height:100%;background:#fdfcf6;position:relative;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    overflow:hidden;padding:24px 14px;
+  }
+  .momgyeot-splash .petals{position:absolute;inset:0;pointer-events:none}
+  .momgyeot-splash .petals span{position:absolute;opacity:.55}
+  .momgyeot-splash .splash-logo{
+    width:42%;aspect-ratio:1/1;background:#7a8a3a;color:#f4d8c8;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Noto Serif KR','Pretendard',sans-serif;font-weight:700;
+    font-size:38px;letter-spacing:-.02em;
+    /* hand-drawn squircle */
+    border-radius:46% 54% 48% 52% / 50% 46% 54% 50%;
+    box-shadow:0 6px 22px -10px rgba(63,77,28,.4);
+    position:relative;z-index:2;
+  }
+  .momgyeot-splash .splash-tag{
+    margin-top:24px;text-align:center;
+    font-family:'Noto Serif KR',serif;font-weight:400;
+    font-size:11px;line-height:1.7;color:#5a584a;letter-spacing:-.01em;
+    position:relative;z-index:2;
+  }
+  .momgyeot-splash .splash-foot{
+    position:absolute;left:0;right:0;bottom:30px;text-align:center;
+    font-family:'Noto Serif KR',serif;font-size:9px;color:#7a7867;line-height:1.9;letter-spacing:.02em;
+  }
+  .momgyeot-splash .splash-foot .ital{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px}
+  .phone.center{transform:translateY(-32px) scale(1.06);z-index:2}
+  .phone.center .label{background:var(--olive);color:#fff;border-color:var(--olive)}
+  .phone .label{
+    position:absolute;left:50%;bottom:-44px;transform:translateX(-50%);
+    background:#fff;border:1px solid var(--line);padding:8px 16px;font-size:11px;letter-spacing:.22em;
+    font-family:'Inter',sans-serif;font-weight:600;color:var(--ink);white-space:nowrap;
+  }
+  .phone:hover{transform:translateY(-8px)}
+  .phone.center:hover{transform:translateY(-40px) scale(1.06)}
+  .app-features{margin-top:96px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .app-feat{padding:24px 0;border-top:1px solid var(--line)}
+  .app-feat .ico{width:36px;height:36px;border-radius:50%;background:var(--olive-pale);color:var(--olive-deep);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:15px}
+  .app-feat h5{margin:0 0 8px;font-family:'Noto Serif KR';font-weight:700;font-size:15px;letter-spacing:-.02em}
+  .app-feat p{margin:0;font-size:13px;color:var(--ink-mute);line-height:1.7}
+  @media(max-width:880px){
+    .phones{gap:20px}
+    .phone{width:220px;flex:0 0 220px}
+    .phone.center{transform:none;scale:1;margin:30px 0}
+    .app-features{grid-template-columns:1fr 1fr}
+  }
+
+  /* WHY MOMGYEOT — LIFECYCLE */
+  .why{background:#fff}
+  .lifecycle{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:start}
+  .stages{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .stage-row{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--line);transition:background .2s}
+  .stage-row:hover{background:var(--cream)}
+  .stage-row .left{
+    background:var(--olive);color:#fff;padding:28px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    font-family:'Noto Serif KR';font-weight:700;font-size:28px;letter-spacing:.02em;position:relative;
+  }
+  .stage-row .left small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10px;letter-spacing:.28em;color:#cbd6a3;margin-top:4px;text-transform:uppercase}
+  .stage-row:nth-child(odd) .left{background:var(--olive-deep)}
+  .stage-row .right{padding:24px 28px;display:flex;flex-direction:column;justify-content:center}
+  .stage-row .right h5{margin:0 0 6px;font-family:'Noto Serif KR';font-weight:600;font-size:17px;letter-spacing:-.02em}
+  .stage-row .right p{margin:0;font-size:14px;color:var(--ink-mute);line-height:1.7}
+
+  .value-panel{
+    background:var(--cream);padding:48px 44px;border:1px solid var(--line);position:sticky;top:90px;
+  }
+  .value-panel .eyebrow{color:var(--olive);margin-bottom:18px}
+  .value-panel h3{
+    font-family:'Noto Serif KR';font-weight:700;font-size:30px;line-height:1.35;margin:0 0 18px;letter-spacing:-.03em;
+  }
+  .value-panel .rule{width:42px;height:2px;background:var(--olive);margin:0 0 32px}
+  .value-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:24px}
+  .value-list li{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start}
+  .value-list .circle{
+    width:54px;height:54px;border-radius:50%;background:var(--olive);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR';font-weight:700;font-size:15px;letter-spacing:.02em;
+  }
+  .value-list .txt b{display:block;font-family:'Noto Serif KR';font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:-.01em}
+  .value-list .txt span{font-size:13.5px;color:var(--ink-mute);line-height:1.7}
+  @media(max-width:980px){.lifecycle{grid-template-columns:1fr;gap:40px}.value-panel{position:static}}
+
+  /* BRANDS */
+  .brands{background:var(--cream)}
+  .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  .brand-card{background:#fff;display:grid;grid-template-rows:280px auto;border:1px solid var(--line);overflow:hidden}
+  .brand-card.feature{grid-column:1/-1;grid-template-columns:1fr 1fr;grid-template-rows:auto;min-height:440px}
+  .brand-card .img{background-size:cover;background-position:center;position:relative;min-height:280px}
+  .brand-card .img .ribbon{
+    position:absolute;top:24px;left:24px;background:var(--olive);color:#fff;
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;padding:6px 12px;font-weight:600;
+  }
+  .brand-card .img .ribbon.featured{background:#c84a37}
+  .brand-card .body{padding:36px 36px 40px;display:flex;flex-direction:column;justify-content:center}
+  .brand-card.feature .body{padding:56px 56px}
+  .brand-card .body .eyebrow{margin-bottom:14px}
+  .brand-card .body h4{
+    font-family:'Noto Serif KR';font-weight:700;font-size:32px;margin:0 0 10px;letter-spacing:-.03em;color:var(--ink);
+  }
+  .brand-card.feature .body h4{font-size:42px}
+  .brand-card .body .role{color:var(--olive-deep);font-size:13px;letter-spacing:.04em;font-weight:500;margin-bottom:18px}
+  .brand-card .body p{font-size:14.5px;color:var(--ink-mute);line-height:1.85;margin:0 0 22px;font-family:'Noto Serif KR';font-weight:400}
+  .brand-card .body .meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:12px;color:var(--olive-deep);letter-spacing:.02em}
+  .brand-card .body .meta b{font-weight:600;color:var(--olive-deep)}
+  .brand-card .body .link{
+    display:inline-flex;align-items:center;gap:10px;margin-top:24px;
+    font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.3em;color:var(--olive);font-weight:600;
+  }
+  .brand-card .body .link span{width:32px;height:1px;background:var(--olive)}
+  @media(max-width:880px){
+    .brand-grid{grid-template-columns:1fr;gap:24px}
+    .brand-card{grid-template-rows:240px auto}
+    .brand-card.feature{grid-template-columns:1fr;grid-column:auto;grid-template-rows:300px auto;min-height:auto}
+    .brand-card.feature .body{padding:36px 28px}
+    .brand-card.feature .body h4{font-size:34px}
+    .brand-card .body{padding:30px 28px}
+    .brand-card .body h4{font-size:26px}
+  }
+  @media(max-width:480px){
+    .brand-card.feature .body{padding:32px 22px}
+    .brand-card .body{padding:26px 22px}
+  }
+
+  /* PRODUCTS STRIP */
+  .product-strip{background:#fff;padding:90px 0}
+  .ps-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+  .ps-head h3{font-family:'Noto Serif KR';font-weight:700;font-size:28px;margin:8px 0 0;letter-spacing:-.03em}
+  .ps-head .right{font-size:13px;color:var(--ink-mute);max-width:480px;line-height:1.7}
+  .ps-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;grid-auto-rows:300px;gap:18px}
+  .ps-grid .tile{
+    background:var(--cream) center/cover no-repeat;position:relative;overflow:hidden;
+    background-color:var(--cream-deep);
+  }
+  .ps-grid .tile .cap{
+    position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.94);padding:10px 14px;
+    font-size:12px;font-family:'Inter',sans-serif;letter-spacing:.22em;color:var(--ink);font-weight:600;text-transform:uppercase;
+    max-width:calc(100% - 36px);
+  }
+  .ps-grid .tile .cap b{display:block;font-family:'Noto Serif KR';font-weight:600;font-size:14px;letter-spacing:-.01em;color:var(--olive-deep);text-transform:none;margin-top:3px}
+  .ps-grid .tile.tall{grid-row:span 2}
+  @media(max-width:880px){
+    .product-strip{padding:60px 0}
+    .ps-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;gap:12px}
+    .ps-grid .tile.tall{grid-row:auto}
+    .ps-grid .tile .cap{font-size:10px;padding:8px 10px;letter-spacing:.18em}
+    .ps-grid .tile .cap b{font-size:12px}
+  }
+  @media(max-width:480px){
+    .ps-grid{grid-template-columns:1fr;grid-auto-rows:260px}
+  }
+
+  /* PARTNERS */
+  .partners{background:var(--paper)}
+  .partner-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+  .partner-img{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .partner-img .pic{background:var(--cream);overflow:hidden;aspect-ratio:1/1}
+  .partner-img .pic img{width:100%;height:100%;object-fit:cover}
+  .partner-img .pic.lg{grid-column:span 2;aspect-ratio:2/1}
+  .partner-list{display:flex;flex-direction:column;gap:36px}
+  .partner-item{display:grid;grid-template-columns:60px 1fr;gap:20px;border-bottom:1px solid var(--line);padding-bottom:32px}
+  .partner-item:last-child{border-bottom:none}
+  .partner-item .n{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;color:var(--olive);line-height:1}
+  .partner-item h4{margin:0 0 10px;font-family:'Noto Serif KR';font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink);position:relative;padding-left:14px}
+  .partner-item h4::before{content:"";position:absolute;left:0;top:8px;width:4px;height:14px;background:var(--olive)}
+  .partner-item p{margin:0;font-size:14px;color:var(--ink-mute);line-height:1.85}
+  .partner-item p b{color:var(--olive-deep);font-weight:600}
+  @media(max-width:980px){.partner-grid{grid-template-columns:1fr;gap:36px}}
+  @media(max-width:480px){
+    .partner-img .pic.lg{aspect-ratio:16/10}
+    .partner-item{grid-template-columns:44px 1fr;gap:14px;padding-bottom:24px}
+    .partner-item .n{font-size:26px}
+    .partner-item h4{font-size:17px}
+  }
+
+  /* CULTURE */
+  .culture{background:var(--cream)}
+  .culture-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+  .culture-imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .culture-imgs .pic{aspect-ratio:1/1;background:#fff;overflow:hidden}
+  .culture-imgs .pic img{width:100%;height:100%;object-fit:cover}
+  .culture-list{display:grid;grid-template-columns:1fr 1fr;gap:30px 36px;align-content:start}
+  .culture-list .it{background:#fff;padding:28px 26px;border:1px solid var(--line);min-height:170px}
+  .culture-list .it h4{margin:0 0 12px;font-family:'Noto Serif KR';font-weight:700;font-size:16px;letter-spacing:-.02em;color:var(--ink);padding-left:12px;border-left:3px solid var(--olive)}
+  .culture-list .it p{margin:0;font-size:13.5px;color:var(--ink-mute);line-height:1.8}
+  @media(max-width:980px){
+    .culture-grid{grid-template-columns:1fr;gap:36px}
+    .culture-list{grid-template-columns:1fr 1fr;gap:18px}
+  }
+  @media(max-width:480px){
+    .culture-list{grid-template-columns:1fr;gap:14px}
+    .culture-list .it{padding:22px 20px;min-height:auto}
+    .culture-list .it[style*="span 2"]{grid-column:auto !important}
+  }
+
+  /* CTA / FOOTER */
+  .cta-block{background:var(--olive-deep);color:#fff;text-align:center;padding:100px 32px;position:relative;overflow:hidden}
+  .cta-block::before{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><g fill='none' stroke='%23a8b884' stroke-width='1.2' opacity='.16'><ellipse cx='200' cy='200' rx='240' ry='60' transform='rotate(-18 200 200)'/><ellipse cx='1000' cy='200' rx='280' ry='70' transform='rotate(28 1000 200)'/><ellipse cx='600' cy='80' rx='200' ry='40' transform='rotate(-10 600 80)'/><ellipse cx='600' cy='340' rx='280' ry='50' transform='rotate(8 600 340)'/></g></svg>");background-size:cover;
+  }
+  .cta-block .inner{position:relative;z-index:2;max-width:780px;margin:0 auto}
+  .cta-block .eyebrow{color:#cbd6a3}
+  .cta-block h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,5.4vw,68px);line-height:1.1;margin:18px 0 28px;letter-spacing:-.02em}
+  .cta-block h2 em{font-style:italic;color:#dde4be}
+  .cta-block p{font-size:15px;color:#dde4be;line-height:1.85;font-family:'Noto Serif KR';font-weight:400;margin:0 auto;max-width:560px}
+  .cta-block .btns{margin-top:42px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+  .cta-block .btn{padding:16px 32px;font-size:12px;letter-spacing:.28em;font-family:'Inter',sans-serif;font-weight:600;border:1px solid #a8b884;color:#fff;transition:all .2s}
+  .cta-block .btn:hover{background:#fff;color:var(--olive-deep);border-color:#fff}
+  .cta-block .btn.primary{background:#fff;color:var(--olive-deep)}
+  .cta-block .btn.primary:hover{background:var(--olive);color:#fff;border-color:var(--olive)}
+
+  footer{background:#23241d;color:#cbc8b6;padding:72px 0 36px;font-size:13px;line-height:1.85}
+  footer .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #3a3b32}
+  footer h6{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.3em;color:#dde4be;font-weight:600;margin:0 0 18px;text-transform:uppercase}
+  footer .logo{margin-bottom:18px}
+  footer .logo .mark{background:#a8b884;color:#23241d}
+  footer .logo .ko{color:#dde4be}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  footer ul a{color:#cbc8b6;transition:color .2s}
+  footer ul a:hover{color:#fff}
+  footer .legal{margin-top:24px;padding-top:18px;font-size:12px;color:#8a8775;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  @media(max-width:880px){footer .foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+
+  /* utility */
+  .leaf-divider{height:80px;display:flex;align-items:center;justify-content:center}
+  .leaf-divider svg{height:32px;opacity:.5}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="container inner">
+    <a href="#" class="logo">
+      <span class="mark">babiz<sup>KOREA</sup></span>
+      <span class="ko">바비즈코리아</span>
+    </a>
+    <ul>
+      <li><a href="#about">기업 소개</a></li>
+      <li><a href="#momgyeot">맘곁</a></li>
+      <li><a href="#app">앱 화면</a></li>
+      <li><a href="#why">Why 맘곁</a></li>
+      <li><a href="#brands">브랜드</a></li>
+      <li><a href="#partner">파트너십</a></li>
+      <li><a href="#culture">문화</a></li>
+    </ul>
+    <a href="#contact" class="cta">CONTACT</a>
+    <button class="menu-btn" aria-label="메뉴 열기/닫기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO ROLLING BANNER -->
+<section class="hero" style="padding:0" aria-label="히어로 슬라이드">
+  <div class="slides">
+
+    <!-- SLIDE 1 — Birth of Happyfamily -->
+    <article class="slide slide-1 active" data-slide="0">
+      <div class="slide-l">
+        <div class="top-row">
+          <span class="eyebrow">Company Introduction</span>
+          <span class="since">EST · 2002</span>
+        </div>
+        <h1>
+          Birth of<br>
+          <em>Happyfamily,</em>
+          <span class="brand">babiz</span>
+        </h1>
+        <div class="underline"></div>
+        <div class="meta">
+          <span class="label">A Maternal Wellness Company</span>
+          <strong>임신 · 출산 · 모유수유 · 디지털 케어</strong>
+        </div>
+      </div>
+      <div class="slide-r">
+        <span class="eyebrow">회사 소개서</span>
+        <h2 class="brand-name">바비즈코리아</h2>
+        <div class="ruled"></div>
+        <p class="pitch">
+          임신·출산·모유수유·신생아 케어부터<br>
+          <b>디지털 태교·육아 케어</b>까지 —<br>
+          엄마와 가족의 곁에서 함께 성장하는<br>
+          <b>모자보건·육아 전문 기업</b>입니다.
+        </p>
+        <div class="hero-info">
+          <div class="item">
+            <div class="label">대표이사 / CEO</div>
+            <div class="val">최소라 <small>Sora Choi</small></div>
+          </div>
+          <div class="item">
+            <div class="label">Brands</div>
+            <div class="val">
+              <span class="pill">맘곁</span>
+              <span class="pill alt" style="margin-left:6px">Mothersbaby</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">Web</div>
+            <div class="val" style="font-size:13px"><small style="margin:0;color:var(--olive-deep);font-weight:500">www.momgyeot.com</small></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 2 — Mothersbaby cushion hero -->
+    <article class="slide slide-2" data-slide="1">
+      <div class="slide-l">
+        <div class="badge">BRAND · MOTHERSBABY</div>
+        <h1>아이와 엄마를 지켜주는<br><em>고품질 수유쿠션</em></h1>
+        <p class="sub">
+          빅사이즈로 안정감 있게, 편안함이 다른 <b>다기능 빅사이즈 전문가용 수유쿠션</b>.
+          국내 시장 점유율·소비자 인지도 1위를 이어온 마더스베이비의 시그니처 라인.
+        </p>
+        <div class="award">🏆 <span><b>BeFe Innovation Award</b> · 멀티 M 수유쿠션 수상 (2023)</span></div>
+        <div class="cta-row">
+          <a class="cta-btn" href="https://www.mothersbaby.co.kr" target="_blank">SHOP MOTHERSBABY</a>
+          <a class="cta-btn ghost" href="#brands">브랜드 보기</a>
+        </div>
+      </div>
+      <div class="slide-r"><div class="photo" role="img" aria-label="마더스베이비 수유쿠션 - 모델 컷"></div></div>
+    </article>
+
+    <!-- SLIDE 3 — MomGyeot app -->
+    <article class="slide slide-3" data-slide="2">
+      <div class="slide-l">
+        <div class="badge">BRAND · MOMGYEOT</div>
+        <h1>아기의 리듬을<br><em>함께 알아가요</em></h1>
+        <p class="sub">
+          태담 녹음, 임신 기록, 육아 리듬 분석을 한 곳에서. 예비·임신·육아·산후까지
+          <b>가족 공동 케어</b>를 지원하는 맘곁의 디지털 솔루션.
+        </p>
+        <div class="stagepills">
+          <span>예비</span><span>임신</span><span>육아</span><span>산후</span>
+        </div>
+        <div class="cta-row">
+          <a class="cta-btn" href="https://www.momgyeot.com" target="_blank">VISIT MOMGYEOT</a>
+          <a class="cta-btn ghost" href="#app">앱 화면 보기</a>
+        </div>
+      </div>
+      <div class="slide-r">
+        <div class="phones-mini">
+          <div class="pmini"><div class="scr"><img src="images/momgyeot-app-guide.png" alt="맘곁 — 모유수유 가이드"></div></div>
+          <div class="pmini mid"><div class="scr"><img src="images/momgyeot-app-chat.png" alt="맘곁 — 상담 채팅"></div></div>
+          <div class="pmini"><div class="scr"><img src="images/momgyeot-app-consult.png" alt="맘곁 — 전문가 연결"></div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="slide-counter"><b id="slide-cur">01</b> / 03</div>
+  <div class="slide-arrows">
+    <button class="prev" aria-label="이전 슬라이드">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="next" aria-label="다음 슬라이드">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <div class="slide-nav">
+    <div class="slide-dots">
+      <button class="active" data-go="0" aria-label="슬라이드 1로 이동"></button>
+      <button data-go="1" aria-label="슬라이드 2로 이동"></button>
+      <button data-go="2" aria-label="슬라이드 3로 이동"></button>
+    </div>
+  </div>
+</section>
+
+<!-- 01. ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">01.</div>
+      <div>
+        <span class="eyebrow">Company Overview</span>
+        <h2>행복한 가족의 탄생을<br>함께 만들어 온 <em style="font-family:'Cormorant Garamond';font-weight:500;font-style:italic;color:var(--olive)">24년</em></h2>
+        <p class="lead">
+          (주)바비즈코리아는 임신·출산·모유수유·육아의 전 과정을 다루는 모자보건·육아 전문 기업입니다.
+          오프라인 모자보건 제품 브랜드 <b>마더스베이비</b>와 디지털 태교·육아 케어 서비스 <b>맘곁(MomGyeot)</b>을 통해
+          엄마와 가족 모두가 함께 통과하는 4단계 — <b>예비 · 임신 · 육아 · 산후</b>를 하나의 흐름으로 연결합니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <div class="stat-block">
+          <div class="cell">
+            <div class="num">24<sup>년</sup></div>
+            <div class="lbl">2002년 설립, 모자보건 외길</div>
+          </div>
+          <div class="cell">
+            <div class="num">300<sup>+</sup></div>
+            <div class="lbl">고급 산후조리원 · 산부인과 납품</div>
+          </div>
+          <div class="cell">
+            <div class="num">100<sup>+</sup></div>
+            <div class="lbl">전국 보건소 · 공공기관 협력</div>
+          </div>
+          <div class="cell">
+            <div class="num">2<sup>brands</sup></div>
+            <div class="lbl">마더스베이비 × 맘곁(MomGyeot)</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="info-table">
+          <div class="row"><div class="k">Company</div><div class="v">주식회사 바비즈코리아<small>Babiz Korea Co., Ltd.</small></div></div>
+          <div class="row"><div class="k">Founded</div><div class="v">2002년</div></div>
+          <div class="row"><div class="k">CEO</div><div class="v">최소라<small>Sora Choi</small></div></div>
+          <div class="row"><div class="k">Business</div><div class="v">임신 · 출산 · 모유수유 · 영유아 토탈 라이프케어</div></div>
+          <div class="row"><div class="k">Domains</div><div class="v">모자보건 · 출산 · 모유수유 · 디지털 케어</div></div>
+          <div class="row"><div class="k">Awards</div><div class="v">BeFe Innovation Award 2023 외 다수<small>육아용품·모자보건 부문</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02. MOMGYEOT - PHILOSOPHY -->
+<section class="mom-feature" id="momgyeot">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">02.</div>
+      <div>
+        <span class="eyebrow">Momgyeot · Philosophy &amp; Structure</span>
+        <h2>태교에서 육아까지 —<br>맘곁이 임신부와 가족의 <em style="font-family:'Noto Serif KR';font-style:normal;color:var(--olive);font-weight:700">곁</em>에 머무는 방식</h2>
+        <p class="lead">
+          "아기의 리듬을 함께 알아가요." 맘곁은 임신부와 태아의 정서적 교감을 가장 중요한 출발점으로 봅니다.
+          매일의 태담을 실천하는 작은 변화가 임신·출산·육아의 결을 바꾼다고 믿습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="mom-banner">
+      <span class="eyebrow">Core Philosophy</span>
+      <h3>태교 심리를 기반으로 한<br><span class="em">태교와 태담의 실천</span></h3>
+      <p class="sub">
+        엄마의 목소리가 아이의 첫 세계가 됩니다. 맘곁은 그 작은 시작을 데이터와 콘텐츠로 잇고,
+        가족 모두가 함께 보고 참여할 수 있는 공동 케어의 인터페이스로 확장합니다.
+      </p>
+    </div>
+
+    <div class="mom-cards">
+      <div class="mom-card">
+        <span class="stage">Stage · 임신</span>
+        <h4>임신맘곁</h4>
+        <div class="tag">태교 · 태담을 일상으로 잇는 임신부 동반자</div>
+        <ul class="feats">
+          <li><b>태담 기능</b><span>매일의 태담을 가이드와 함께 실천</span></li>
+          <li><b>태담 녹음 저장</b><span>엄마의 목소리를 아기에게 남기는 기록</span></li>
+          <li><b>이야기 기록</b><span>임신 일지를 앨범 형태의 콘텐츠로 저장</span></li>
+          <li><b>주차별 태교 콘텐츠 알림</b><span>서두르지 않는 임신 루틴</span></li>
+        </ul>
+        <div class="footer-cta">
+          <a href="https://www.momgyeot.com" target="_blank">EXPLORE PREGNANCY</a>
+          <div class="icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="mom-card">
+        <span class="stage">Stage · 육아</span>
+        <h4>육아맘곁</h4>
+        <div class="tag">출산 이후, 데이터로 함께하는 일상 케어</div>
+        <ul class="feats">
+          <li><b>수유 · 수면 · 배변 · 컨디션 기록</b><span>통합 관리</span></li>
+          <li><b>아기 리듬 분석</b><span>패턴 변화를 한눈에 시각화</span></li>
+          <li><b>주차별 발달 · 양육 콘텐츠 · 체크리스트</b><span>시기별 핵심만 큐레이션</span></li>
+          <li><b>전문가 상담 연결</b><span>모유수유 · 신생아 케어 IBCLC 연결</span></li>
+        </ul>
+        <div class="footer-cta">
+          <a href="https://www.momgyeot.com" target="_blank">EXPLORE PARENTING</a>
+          <div class="icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02.5 MOMGYEOT APP SHOWCASE -->
+<section class="app-showcase" id="app">
+  <div class="container">
+    <div class="section-head" style="grid-template-columns:280px 1fr;align-items:start">
+      <div class="num" style="color:var(--olive);font-size:60px">App</div>
+      <div>
+        <span class="eyebrow">In the App · 맘곁 화면</span>
+        <h2>매일의 태담부터 모유수유 가이드까지,<br>한 화면에서 <em style="font-family:'Cormorant Garamond';font-style:italic;color:var(--olive)">함께</em></h2>
+        <p class="lead">
+          맘곁은 단순한 기록 앱이 아닙니다. <b>오늘 · 기록 · 리듬 · 상담 · 우리 이야기</b> 다섯 개의 탭이
+          하나의 흐름으로 연결되어, 엄마와 아기의 24시간을 데이터와 정서적 케어로 함께 봅니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="phones">
+      <div class="phone">
+        <div class="screen"><img src="images/momgyeot-app-guide.png" alt="맘곁 — 모유수유 가이드"></div>
+        <span class="label">모유수유 가이드</span>
+      </div>
+      <div class="phone center">
+        <div class="screen"><img src="images/momgyeot-app-chat.png" alt="맘곁 — 상담 채팅"></div>
+        <span class="label">상담 · CONVERSATION</span>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="momgyeot-splash" role="img" aria-label="맘곁 인트로 화면">
+            <div class="petals">
+              <span style="top:14%;left:18%;font-size:18px">🌸</span>
+              <span style="top:6%;left:48%;font-size:22px">🌸</span>
+              <span style="top:22%;right:14%;font-size:16px">🌸</span>
+              <span style="bottom:36%;left:12%;font-size:14px">🌸</span>
+              <span style="bottom:30%;right:16%;font-size:20px">🌸</span>
+            </div>
+            <div class="splash-logo" aria-hidden="true">맘곁</div>
+            <div class="splash-tag">
+              지금 떠오르는 마음을<br>
+              우리의 이야기에 남겨보세요.
+            </div>
+            <div class="splash-foot">
+              <div>By mothersbaby</div>
+              <div class="ital">Parenting Research Institute</div>
+            </div>
+          </div>
+        </div>
+        <span class="label">인트로 · MomGyeot</span>
+      </div>
+    </div>
+
+    <div class="app-features">
+      <div class="app-feat">
+        <div class="ico">01</div>
+        <h5>대화로 시작하는 케어</h5>
+        <p>"수유 관련해서 걱정이 있어요." 한 줄의 고민이 진단 카드·가이드·전문가 연결로 자연스럽게 이어집니다.</p>
+      </div>
+      <div class="app-feat">
+        <div class="ico">02</div>
+        <h5>판단 카드 · 시그널 분석</h5>
+        <p>지금 보이는 신호, 가장 흔한 원인, 정상 범위와 주의 신호를 한 카드 안에서 확인합니다.</p>
+      </div>
+      <div class="app-feat">
+        <div class="ico">03</div>
+        <h5>지금 바로 해볼 것</h5>
+        <p>이론이 아니라 오늘 당장 시도할 수 있는 액션을 단계별로 안내합니다. 전문가 확인이 필요한 시그널도 함께.</p>
+      </div>
+      <div class="app-feat">
+        <div class="ico">04</div>
+        <h5>모유수유 가이드 1.0</h5>
+        <p>젖 물림 · 수유 자세 · 유두 통증 · 수유량 걱정 · 짧게 먹고 자주 찾음 · 수유 후 잠듦 · 단유 고민까지.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03. WHY MOMGYEOT - LIFECYCLE -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">03.</div>
+      <div>
+        <span class="eyebrow">Why Momgyeot</span>
+        <h2>예비 · 임신 · 육아 · 산후 —<br><em style="font-family:'Cormorant Garamond';font-style:italic;color:var(--olive)">전 주기 케어</em>와 공동 육아 지향</h2>
+        <p class="lead">
+          아기와 산모, 가족이 함께 통과하는 4단계를 하나의 인터페이스로.
+          맘곁은 단일 시점의 도구가 아니라, 가족이 함께 사용하는 라이프스테이지 플랫폼입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="lifecycle">
+      <div class="stages">
+        <div class="stage-row">
+          <div class="left">예비<small>Pre-pregnancy</small></div>
+          <div class="right">
+            <h5>임신 준비 · 부부 교감</h5>
+            <p>부부가 함께하는 태담 실천 준비, 임신 전 건강·심리 점검과 가족 커뮤니케이션 설계.</p>
+          </div>
+        </div>
+        <div class="stage-row">
+          <div class="left">임신<small>Pregnancy</small></div>
+          <div class="right">
+            <h5>태교 · 태담 · 일정 알림 · 임신 일지 기록</h5>
+            <p>주차별 태교 콘텐츠와 함께 태담을 일상으로 잇고, 매일의 변화를 한 권의 앨범으로 남깁니다.</p>
+          </div>
+        </div>
+        <div class="stage-row">
+          <div class="left">육아<small>Parenting</small></div>
+          <div class="right">
+            <h5>수유 · 수면 · 발달 기록과 아기 리듬 분석</h5>
+            <p>아기의 24시간을 데이터로 누적, 패턴 변화를 시각화하고 시기별 가이드를 제공합니다.</p>
+          </div>
+        </div>
+        <div class="stage-row">
+          <div class="left">산후<small>Postpartum</small></div>
+          <div class="right">
+            <h5>산후 회복과 산후 우울증 대응 · 전문가 상담</h5>
+            <p>엄마의 정서적 회복을 케어, 필요한 시점에 IBCLC·상담 전문가를 직접 연결합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="value-panel">
+        <span class="eyebrow">Value</span>
+        <h3>아기 · 산모 · 가족이<br>함께 만드는 공동육아</h3>
+        <div class="rule"></div>
+        <ul class="value-list">
+          <li>
+            <div class="circle">엄마</div>
+            <div class="txt">
+              <b>정서적 케어 × 데이터</b>
+              <span>임신·출산의 불안을 정서적 케어와 데이터로 보완합니다.</span>
+            </div>
+          </li>
+          <li>
+            <div class="circle">아기</div>
+            <div class="txt">
+              <b>이야기로 남기는 기록</b>
+              <span>태담 녹음과 육아 기록을 한 권의 이야기로 남깁니다.</span>
+            </div>
+          </li>
+          <li>
+            <div class="circle">가족</div>
+            <div class="txt">
+              <b>공유 인터페이스</b>
+              <span>아빠·조부모도 함께 보고 참여하는 공동 케어 환경.</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 04. BRANDS -->
+<section class="brands" id="brands">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">04.</div>
+      <div>
+        <span class="eyebrow">Our Brands</span>
+        <h2>디지털과 오프라인을 잇는<br>두 개의 브랜드</h2>
+        <p class="lead">디지털 케어 서비스 <b>맘곁(MomGyeot)</b>과 모자보건 전용 제품 브랜드 <b>마더스베이비(Mothersbaby)</b>가 가족의 라이프스테이지를 함께 지원합니다.</p>
+      </div>
+    </div>
+
+    <div class="brand-grid">
+      <!-- MomGyeot - featured -->
+      <article class="brand-card feature">
+        <div class="img" style="background:linear-gradient(135deg,#5d6e2c 0%,#3f4d1c 100%);position:relative;overflow:hidden">
+          <span class="ribbon featured">FEATURED · DIGITAL</span>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;gap:36px;padding:48px 56px">
+            <div style="color:#fff;flex:1;min-width:0">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.36em;color:#cbd6a3;margin-bottom:18px">BRAND · 02</div>
+              <div style="font-family:'Noto Serif KR';font-weight:700;font-size:56px;letter-spacing:-.04em;color:#fff;line-height:1">맘곁</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:#dde4be;margin-top:6px">MomGyeot</div>
+              <div style="width:48px;height:1px;background:#a8b884;margin:22px 0"></div>
+              <div style="font-family:'Noto Serif KR';font-size:14px;color:#dde4be;line-height:1.85">아기의 리듬을<br>함께 알아가요</div>
+            </div>
+            <div style="flex:0 0 auto;display:flex;gap:14px;align-items:flex-end;position:relative">
+              <div style="width:140px;background:#0f1009;border-radius:22px;padding:5px;box-shadow:0 20px 40px -10px rgba(0,0,0,.5);transform:translateY(8px) rotate(-3deg);position:relative">
+                <div style="width:100%;aspect-ratio:9/19.5;border-radius:18px;overflow:hidden;background:#fff"><img src="images/momgyeot-app-card.png" alt="맘곁 앱" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>
+              </div>
+              <div style="width:140px;background:#0f1009;border-radius:22px;padding:5px;box-shadow:0 20px 40px -10px rgba(0,0,0,.5);transform:rotate(3deg);position:relative;z-index:2">
+                <div style="width:100%;aspect-ratio:9/19.5;border-radius:18px;overflow:hidden;background:#fff"><img src="images/momgyeot-app-chat.png" alt="맘곁 상담 화면" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body">
+          <span class="eyebrow">Brand 02 · Featured</span>
+          <h4>맘곁 <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:var(--olive);font-size:30px">(MomGyeot)</span></h4>
+          <div class="role">태교 · 임신 · 육아 디지털 케어 서비스</div>
+          <p>
+            태담 녹음, 임신 기록, 육아 리듬 분석을 한 곳에서. 예비·임신·육아·산후 우울증 대응까지
+            <b>가족 공동 케어</b>를 지원하는 디지털 솔루션. 바비즈코리아의 24년 모자보건 데이터와
+            태교 심리 기반의 콘텐츠가 함께 작동합니다.
+          </p>
+          <div class="meta">
+            <span><b>스테이지</b> · 예비 / 임신 / 육아 / 산후</span>
+            <span><b>채널</b> · iOS · Android · Web</span>
+          </div>
+          <a class="link" href="https://www.momgyeot.com" target="_blank">VISIT MOMGYEOT.COM <span></span></a>
+        </div>
+      </article>
+
+      <!-- Mothersbaby -->
+      <article class="brand-card">
+        <div class="img" style="background-image:url('images/mothersbaby-main.jpg');background-position:center 20%">
+          <span class="ribbon">BRAND · 01</span>
+        </div>
+        <div class="body">
+          <span class="eyebrow">Brand 01</span>
+          <h4>마더스베이비</h4>
+          <div class="role">국내 최초 모유수유 전용 브랜드</div>
+          <p>
+            모유수유 · 산모 · 신생아 케어를 중심으로 한 토탈 라인. 전국 보건소·공공 산후조리원·
+            호텔 모유수유실 <b>100여 곳 설치·운영</b> 경험. <b>BeFe Innovation Award 2023</b> 수상.
+          </p>
+          <a class="link" href="https://www.mothersbaby.co.kr" target="_blank">MOTHERSBABY.CO.KR <span></span></a>
+        </div>
+      </article>
+
+      <!-- Babiz Group -->
+      <article class="brand-card">
+        <div class="img" style="background:var(--cream-deep);position:relative">
+          <span class="ribbon" style="background:var(--olive-deep)">GROUP</span>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div style="background:var(--olive);color:#fff;font-family:'Inter',sans-serif;font-weight:700;padding:14px 24px;letter-spacing:.02em;font-size:32px">babiz<sup style="font-size:11px;letter-spacing:.3em;color:var(--olive-pale);margin-left:6px">KOREA</sup></div>
+            <div style="margin-top:18px;font-family:'Noto Serif KR';font-weight:500;color:var(--ink-mute);font-size:13px;letter-spacing:.2em">SINCE · 2002</div>
+          </div>
+        </div>
+        <div class="body">
+          <span class="eyebrow">Mother Company</span>
+          <h4>바비즈코리아</h4>
+          <div class="role">모자보건 · 육아 전문 기업</div>
+          <p>두 브랜드를 운영하는 모자회사. 산부인과·산후조리원·공공기관·해외 파트너십을 통해 모자보건 인프라를 함께 만들어 갑니다.</p>
+          <a class="link" href="#partner">SEE PARTNERSHIP <span></span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 05. PRODUCT STRIP -->
+<section class="product-strip" id="products">
+  <div class="container">
+    <div class="ps-head">
+      <div>
+        <span class="eyebrow">Mothersbaby · Signature</span>
+        <h3>써 본 사람은 아는 정직함<br>아이와 엄마를 지켜주는 제품들</h3>
+      </div>
+      <div class="right">국내 시장 점유율·소비자 인지도 1위 수유쿠션을 비롯한 모유수유·임산부 이너웨어·산후 회복 카테고리. BeFe Innovation Award 2023 수상작 멀티 M 수유쿠션 포함.</div>
+    </div>
+    <div class="ps-grid">
+      <div class="tile tall" style="background-image:url('images/nursing-cushion.jpg');background-position:center top">
+        <div class="cap">Nursing Cushion<b>시장점유율 · 소비자 인지도 1위</b></div>
+      </div>
+      <div class="tile" style="background-image:url('images/nursing-bra-main.jpg');background-position:center 20%">
+        <div class="cap">Nursing Bra<b>데일리 에어핏 수유브라</b></div>
+      </div>
+      <div class="tile" style="background-image:url('images/breast-pump.jpg');background-position:center 30%;background-size:contain;background-color:#f4f0e6;background-repeat:no-repeat">
+        <div class="cap">Breast Pump<b>셀프 이지 유축기 110ml</b></div>
+      </div>
+      <div class="tile" style="background-image:url('images/compression-band.jpg');background-position:center top">
+        <div class="cap">Compression Band<b>마망핫 압박밴드</b></div>
+      </div>
+      <div class="tile" style="background-image:url('images/body-pillow.jpg');background-position:center 25%">
+        <div class="cap">Body Pillow<b>J형 임산부 바디필로우</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06. PARTNERS -->
+<section class="partners" id="partner">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">05.</div>
+      <div>
+        <span class="eyebrow">Partnership</span>
+        <h2>병원 · 공공기관 · 전문가와 함께</h2>
+        <p class="lead">바비즈코리아는 단일 브랜드를 넘어 모자보건 인프라의 한 축으로 일해왔습니다. 24년간 쌓인 신뢰가 맘곁의 디지털 케어에 그대로 이어집니다.</p>
+      </div>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-img">
+        <div class="pic"><img src="images/partner-room.jpg" alt="산부인과 / 산후조리원 객실"></div>
+        <div class="pic"><img src="images/partner-newborn.jpg" alt="신생아실"></div>
+        <div class="pic"><img src="images/partner-chair.jpg" alt="공공기관 모유수유실"></div>
+        <div class="pic"><img src="images/partner-ilado.jpg" alt="ILADO 임부 출산 기념 목걸이 / 해외 브랜드"></div>
+      </div>
+      <div class="partner-list">
+        <div class="partner-item">
+          <div class="n">01</div>
+          <div>
+            <h4>산부인과 병원 / 산후조리원</h4>
+            <p>제일병원, 미래와 희망, 강남 차병원, 메디아이 등 <b>대형 산부인과 프랜차이즈</b>와 세인트파크, 베네크레, 라테라, 궁 등 <b>고급 산후조리원 300여 곳</b>에 마더스베이비·엔젤비닷 제품을 납품하고 있습니다.</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="n">02</div>
+          <div>
+            <h4>스페셜리스트 네트워크</h4>
+            <p><b>IBCLC 국제모유수유전문가</b>와 임산부 케어센터의 산모 마사지 전문가 등 각 분야의 자연주의 육아 전문가들과 함께하고 있습니다.</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="n">03</div>
+          <div>
+            <h4>공공기관</h4>
+            <p>전국의 <b>보건소·용산구청 등 100여 곳</b>의 공공기관에 모유수유실 설치 사업을 전개하고 있으며, 인구보건복지협회의 '출산장려 및 모유수유 프로그램'에 참여하고 있습니다.</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="n">04</div>
+          <div>
+            <h4>해외 브랜드</h4>
+            <p>'자연주의'를 기본으로 한 세계의 좋은 제품, 좋은 문화를 찾아내 <b>글로벌 파트너십</b>을 전개해 나가고 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07. CULTURE -->
+<section class="culture" id="culture">
+  <div class="container">
+    <div class="section-head">
+      <div class="num">06.</div>
+      <div>
+        <span class="eyebrow">Babiz Culture</span>
+        <h2>제품을 넘어, <em style="font-family:'Cormorant Garamond';font-style:italic;color:var(--olive)">문화</em>를 만드는 회사</h2>
+        <p class="lead">바비즈는 제품만 유통하는 기업이 아니라, 이윤이 소비자의 필요한 곳에 나눠지는 공동체적 기업 문화를 지향합니다. 강좌·매거진·디자인 연구·사회공헌이 하나의 사이클로 작동합니다.</p>
+      </div>
+    </div>
+    <div class="culture-grid">
+      <div class="culture-imgs">
+        <div class="pic" style="grid-column:span 2;aspect-ratio:2/1"><img src="images/culture.jpg" alt="Babiz Culture — courses, magazine, design lab"></div>
+      </div>
+      <div class="culture-list">
+        <div class="it"><h4>다양한 강좌 상시 운영</h4><p>모유수유 강좌, 태교분만 강좌, 베이비 마사지 강좌, 퍼스트 스텝 슈즈 D.I.Y 등 무료 태교·육아 교실을 상시 운영합니다.</p></div>
+        <div class="it" style="grid-column:span 2;padding:0;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;min-height:240px;background:#fff">
+          <div style="background:url('images/save-the-children.jpg') center/cover no-repeat;min-height:240px"></div>
+          <div style="padding:28px 30px;display:flex;flex-direction:column;justify-content:center">
+            <h4 style="margin:0 0 12px;padding-left:12px;border-left:3px solid var(--olive);font-family:'Noto Serif KR';font-weight:700;font-size:17px;letter-spacing:-.02em;color:var(--ink)">사회공헌 · 세이브더칠드런</h4>
+            <p style="margin:0;font-size:13.5px;color:var(--ink-mute);line-height:1.8">
+              <b style="color:var(--olive-deep);font-weight:600">2025년 12월</b>, <b style="color:var(--olive-deep);font-weight:600">세이브더칠드런</b>에 마더스베이비 모자보건 제품을 공급해 국내외 취약 가정의 산모·신생아에게 전달했습니다.
+              녹색연합 기부, 무상 강좌, 신진 디자이너 플리마켓 등 — 이윤을 소비자가 필요한 곳에 나누는 공동체적 기업 문화를 이어가고 있습니다.
+            </p>
+            <div style="margin-top:14px;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.28em;color:var(--olive);font-weight:600">BABIZ KOREA × SAVE THE CHILDREN · 2025.12</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block" id="contact">
+  <div class="inner">
+    <span class="eyebrow">Get in Touch</span>
+    <h2><em>가족의 곁에서,</em><br>함께 자랍니다</h2>
+    <p>맘곁 도입, 마더스베이비 제휴, 공공기관 모유수유실 설치, 글로벌 파트너십 등 모든 협업 문의는 아래로 연락 주세요.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.momgyeot.com" target="_blank">VISIT MOMGYEOT</a>
+      <a class="btn" href="https://www.mothersbaby.co.kr" target="_blank">VISIT MOTHERSBABY</a>
+      <a class="btn" href="tel:1544-7554">CALL · 1544-7554</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><span class="mark">babiz<sup>KOREA</sup></span><span class="ko" style="margin-left:10px">바비즈코리아</span></div>
+        <div>주식회사 바비즈코리아<br>11787 경기 의정부시 산단로68번길 148 다동 2층<br>대표이사 최소라 · 사업자등록번호 217-81-34223</div>
+      </div>
+      <div>
+        <h6>Brands</h6>
+        <ul>
+          <li><a href="https://www.momgyeot.com" target="_blank">맘곁 · MomGyeot</a></li>
+          <li><a href="https://www.mothersbaby.co.kr" target="_blank">마더스베이비</a></li>
+          <li><a href="https://www.babiz.co.kr" target="_blank">바비즈코리아 그룹</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Company</h6>
+        <ul>
+          <li><a href="#about">기업 소개</a></li>
+          <li><a href="#why">전 주기 케어 모델</a></li>
+          <li><a href="#partner">파트너십</a></li>
+          <li><a href="#culture">문화 / 사회공헌</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Contact</h6>
+        <ul>
+          <li>T. 1544-7554 (10:00–17:00)</li>
+          <li>www.momgyeot.com</li>
+          <li>www.mothersbaby.co.kr</li>
+          <li>@mothersbaby_official</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Babiz Korea Co., Ltd. All rights reserved.</span>
+      <span>Birth of Happyfamily, babiz · Since 2002</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Mobile menu toggle
+  const body = document.body;
+  const btn = document.querySelector('.menu-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('nav.top ul a').forEach(a => {
+      a.addEventListener('click', () => {
+        body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Hero slider
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dots = Array.from(document.querySelectorAll('.slide-dots button'));
+  const counter = document.getElementById('slide-cur');
+  const prevBtn = document.querySelector('.slide-arrows .prev');
+  const nextBtn = document.querySelector('.slide-arrows .next');
+  let idx = 0, timer = null, paused = false;
+
+  function go(n) {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    if (counter) counter.textContent = String(idx + 1).padStart(2, '0');
+  }
+  function start() {
+    stop();
+    timer = setInterval(() => { if (!paused) go(idx + 1); }, 6000);
+  }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+  dots.forEach(d => d.addEventListener('click', () => { go(parseInt(d.dataset.go, 10)); start(); }));
+  if (prevBtn) prevBtn.addEventListener('click', () => { go(idx - 1); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { go(idx + 1); start(); });
+
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.addEventListener('mouseenter', () => { paused = true; });
+    hero.addEventListener('mouseleave', () => { paused = false; });
+    // Touch swipe
+    let sx = 0, sy = 0;
+    hero.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+    hero.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - sx;
+      const dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+        go(idx + (dx < 0 ? 1 : -1));
+        start();
+      }
+    }, {passive:true});
+  }
+  if (slides.length > 1) start();
+})();
+</script>
+</body>
+</html>
